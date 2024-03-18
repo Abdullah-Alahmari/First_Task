@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { ElementRef, Renderer2 } from '@angular/core';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 
@@ -17,6 +17,12 @@ export class NavbarComponent {
     
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+  }
+
+  
   add_class(){
     this.el.nativeElement.querySelector('#navbarNav').classList.add('navbar-mobile');
   }
